@@ -6,6 +6,7 @@
 
 body {
   width: 1100px;
+  height: 3028px;
   margin: 0 auto;
   font-family: Raleway, sans-serif;
 }
@@ -35,4 +36,13 @@ img {
 
 button {
   font: inherit;
+}
+
+.header__logo {
+  display: block;
+  justify-self: center;
+}
+
+.header__logo-image {
+  width: 148px;
 }
