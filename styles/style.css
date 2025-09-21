@@ -10,7 +10,7 @@ header {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr min-content 1fr;
-  padding: 85px 50px;
+  padding: 86px 50px;
 }
 
 /* Стили для меню навигации в шапке */
@@ -77,7 +77,7 @@ header {
   display: flex;
   flex-direction: column; /* Каждая часть на новой строке */
   position: relative;
-  max-width: 1000px;
+  width: 1000px;
   top: 165px;
   left: 50px;
   z-index: 2; /* Над оверлеем */
@@ -117,7 +117,6 @@ header {
   bottom: 50px;
   left: 0;
   width: 100%;
-  padding: 0 50px;
   box-sizing: border-box;
   word-spacing: 18px; /* Расстояние между словами */
 }
@@ -127,7 +126,6 @@ header {
   font-size: 22px;
   color: #ffffff;
   text-transform: uppercase; /* Верхний регистр */
-  margin: 0;
 }
 
 /* Стиль для кнопки */
@@ -244,6 +242,7 @@ header {
   grid-template-rows: auto auto;
   margin-top: 150px;
   margin-left: 40px;
+  margin-right: 40px;
 }
 
 /* Логотип */
