@@ -331,6 +331,7 @@ header {
 .footer__menu {
   display: flex;
   justify-content: center;
+  min-height: 180px;
 }
 
 .footer__menu-list {
