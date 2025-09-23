@@ -10,7 +10,7 @@ header {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr min-content 1fr;
-  padding: 86px 50px;
+  padding: 92px 50px;
 }
 
 /* Стили для меню навигации в шапке */
@@ -26,12 +26,27 @@ header {
   list-style: circle; /* Стиль маркера списка — кружок */
 }
 
+.header__link {
+  text-decoration: none; /* Убираем подчеркивание у всех ссылок */
+  border-bottom: 1px solid #000; /* Добавляем подчеркивание */
+  padding-bottom: 1px; /* Расстояние между текстом и линией */
+}
+
 .header__link_active {
   text-decoration: none; /* Убираем подчеркивание у ссылки "Главная" */
+  border-bottom: none; /* Удаляем подчеркивание у активной ссылки */
+  padding-bottom: 0; /* Удаляем отступ */
 }
 
 .header__links-list-item_no-bullit {
   list-style: none; /* Убираем маркер у ссылки "Главная" */
+}
+
+.header__logo-image {
+  width: 135px;
+  left: 12px;
+  justify-content: center;
+  border-width: 6px;
 }
 
 /* Стили для блока с адресом в шапке */
@@ -39,6 +54,7 @@ header {
   display: flex;
   flex-direction: column; /* Вертикальное расположение элементов */
   align-items: flex-start; /* Выравниваниевание элементов по левому краю */
+  font-style: normal; /* Убираем наклон шрифта */
   justify-self: end;
   max-width: 240px;
   font-size: 18px;
@@ -49,6 +65,7 @@ header {
   text-decoration: none;
   border-bottom: 1px solid #000;
   padding-bottom: 1px; /* Расстояние между текстом и линией */
+  margin-bottom: 2px;
 }
 
 /* Блок с фоновым изображением */
@@ -60,12 +77,13 @@ header {
   background-image: url("../images/cover.jpg"); /* Фоновое изображение */
   background-size: cover; /* Масштабировать изображение для покрытия всей области */
   background-position: center;
+  justify-content: space-between;
 }
 
 /* Полупрозрачный слой поверх фона */
 .overlay {
   position: absolute;
-  padding: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон */
@@ -75,11 +93,9 @@ header {
 /* Заголовок "Оно тебе надо" */
 .cover__title {
   display: flex;
-  flex-direction: column; /* Каждая часть на новой строке */
   position: relative;
-  width: 1000px;
-  top: 165px;
-  left: 50px;
+  flex-direction: column; /* Каждая часть на новой строке */
+  margin: 165px 50px 0;
   z-index: 2; /* Над оверлеем */
 }
 
@@ -87,7 +103,7 @@ header {
   display: block;
   color: #ffffff;
   font-size: 100px; /* Размер шрифта */
-  line-height: 1.3; /* Межстрочное расстояние */
+  line-height: 1.35; /* Межстрочное расстояние */
 }
 
 .aligned-text_left {
@@ -106,19 +122,20 @@ header {
   letter-spacing: 0.3em; /* Расстояние между буквами */
 }
 
+.no-letter-spacing {
+  letter-spacing: 0;
+}
+
 /* Блок с описанием под заголовком */
 .cover__description {
   display: flex;
   flex-direction: row; /* В строку */
-  position: absolute; /* Абсолютное позиционирование */
   justify-content: space-around;
   align-items: center;
   z-index: 2;
-  bottom: 50px;
-  left: 0;
-  width: 100%;
   box-sizing: border-box;
   word-spacing: 18px; /* Расстояние между словами */
+  margin-bottom: 50px;
 }
 
 /* Стиль текста описания */
@@ -134,7 +151,7 @@ header {
   height: 51px;
   color: #ffffff;
   box-sizing: border-box;
-  border: 1px solid #ffffff; /* Рамка */
+  border: 1px solid currentColor; /* Рамка */
   background-color: transparent;
   text-transform: uppercase;
   font-size: 22px;
@@ -174,13 +191,20 @@ header {
   text-decoration: none; /* Убираем подчеркивание */
 }
 
+.lots__look-more-link {
+  text-decoration: none; /* Убираем подчеркивание у всех ссылок */
+  border-bottom: 1px solid #000; /* Добавляем подчеркивание */
+  padding-bottom: 1px; /* Расстояние между текстом и линией */
+  width: fit-content; /* Ширина по содержимому */
+}
+
 /* Общие стили карточки */
 .card {
   display: flex;
   flex-direction: column; /* Вертикальное расположение */
   position: relative; /* Для позиционирования внутренних элементов */
   width: 334px;
-  height: 596px;
+  min-height: 596px;
   background-size: cover;
   background-position: center; /* Центрирование изображения */
 }
@@ -197,23 +221,15 @@ header {
   background-image: url(../images/card-lot-03.jpg);
 }
 
-/* Оверлей внутри карточки */
-.card .overlay {
-  display: flex;
-  flex-direction: column;
-  position: absolute; /* Над изображением */
-  justify-content: space-between; /* Распределение элементов по вертикали */
-  padding: 40px;
-  height: 100%;
-  box-sizing: border-box;
-  z-index: 1; /* Поверх фона */
-}
-
 /* Заголовок карточки */
 .card__title {
   font-size: 22px;
   color: #ffffff;
   text-decoration: underline;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 48px;
+  z-index: 2; /* Над оверлеем */
 }
 
 /* Текст описания внутри карточки */
@@ -221,9 +237,11 @@ header {
   font-size: 20px;
   line-height: 1.2; /* Межстрочное расстояние */
   color: #ffffff;
+  margin-top: auto;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 48px;
   z-index: 2; /* Над оверлеем */
-  margin-top: 10px;
-  justify-content: end; /* Выравнивание в конце */
 }
 
 /* Ссылка "Посмотреть больше" */
@@ -239,10 +257,7 @@ header {
 .about__column {
   display: grid;
   grid-template-columns: 334px 1fr; /* Левая колонка 334, правая — оставшееся пространство */
-  grid-template-rows: auto auto;
-  margin-top: 150px;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin: 160px 24px 0;
 }
 
 /* Логотип */
@@ -254,6 +269,7 @@ header {
   height: 240px;
   border-radius: 50%; /* Закругление логотипа */
   background-color: #000;
+  margin-left: 47px;
 }
 
 .about__logo-image {
@@ -266,6 +282,7 @@ header {
   align-self: center;
   font-size: 40px;
   line-height: 47px;
+  padding-left: 22px;
 }
 
 .about__text-wrapper {
@@ -274,6 +291,7 @@ header {
   grid-column: 2;
   gap: 24px; /* Расстояние между параграфами */
   flex-direction: column;
+  padding-left: 22px;
 }
 
 /* Текст о аукционе */
@@ -298,6 +316,15 @@ header {
   justify-content: flex-start;
   font-size: 18px;
   margin-left: 50px; /* Отступ слева */
+  font-style: normal; /* Убираем наклон шрифта */
+}
+
+.footer__address a {
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+  padding-bottom: 1px; /* Расстояние между текстом и линией */
+  width: fit-content; /* Ширина по содержимому */
+  margin-bottom: 2px;
 }
 
 /* Меню навигации в подвале */
@@ -319,10 +346,14 @@ header {
   text-align: center;
   color: #000000;
   font-size: 18px;
+  border-bottom: 1px solid #000; /* Добавляем подчеркивание */
+  text-decoration: none; /* Убираем подчеркивание  */
 }
 
 .footer__menu-link_active {
-  text-decoration: none; /* Без подчеркивания */
+  text-decoration: none; /* Убираем подчеркивание  */
+  border-bottom: none; /* Убираем подчеркивание */
+  padding-bottom: 0px; /* Убираем отступ */
 }
 
 /* Список иконок соцсетей */
@@ -342,6 +373,7 @@ header {
 
 /* Размер иконок соцсетей */
 .footer__social-icon {
-  width: 35px;
-  height: 35px;
+  width: 48px; /* Уменьшаем размер иконок */
+  height: 48px; /* Уменьшаем размер иконок */
+  display: inline-block; /*  чтобы размеры корректно применялись */
 }
