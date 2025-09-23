@@ -191,13 +191,6 @@ header {
   text-decoration: none; /* Убираем подчеркивание */
 }
 
-.lots__look-more-link {
-  text-decoration: none; /* Убираем подчеркивание у всех ссылок */
-  border-bottom: 1px solid #000; /* Добавляем подчеркивание */
-  padding-bottom: 1px; /* Расстояние между текстом и линией */
-  width: fit-content; /* Ширина по содержимому */
-}
-
 /* Общие стили карточки */
 .card {
   display: flex;
@@ -251,6 +244,10 @@ header {
   margin-left: 40px;
   font-size: 20px;
   z-index: 2; /* Над другими элементами */
+  text-decoration: none; /* Убираем подчеркивание у всех ссылок */
+  border-bottom: 1px solid #000; /* Добавляем подчеркивание */
+  padding-bottom: 1px; /* Расстояние между текстом и линией */
+  width: fit-content; /* Ширина по содержимому */
 }
 
 /* Блок информации об аукционе */
