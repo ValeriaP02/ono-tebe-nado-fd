@@ -161,8 +161,9 @@ header {
 .lots {
   display: flex;
   flex-direction: column; /* Вертикальное расположение */
-  width: 1052px; /* Общая ширина */
-  margin: 180px 24px 0; /* Верхний отступ 180, боковые по 24, снизу 0 */
+  width: 1052px;
+  margin: 180px 24px 0;
+  box-sizing: border-box;
 }
 
 /* Заголовок секции лотов */
@@ -177,7 +178,6 @@ header {
 .lots__card-list {
   display: flex;
   flex-wrap: wrap; /* Перенос элементов на новую строку */
-  justify-content: center;
   list-style: none;
   gap: 25px; /* Расстояние между карточками */
   padding: 0;
@@ -200,6 +200,7 @@ header {
   min-height: 596px;
   background-size: cover;
   background-position: center; /* Центрирование изображения */
+  box-sizing: border-box;
 }
 
 .card_type_film {
@@ -328,7 +329,6 @@ header {
 .footer__menu {
   display: flex;
   justify-content: center;
-  min-height: 180px;
 }
 
 .footer__menu-list {
