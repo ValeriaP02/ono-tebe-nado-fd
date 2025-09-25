@@ -329,6 +329,7 @@ header {
 .footer__menu {
   display: flex;
   justify-content: center;
+  padding-bottom: 110px;
 }
 
 .footer__menu-list {
